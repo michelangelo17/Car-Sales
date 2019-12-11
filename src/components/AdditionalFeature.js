@@ -1,15 +1,20 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addItem } from '../redux/actions'
 
 const AdditionalFeature = props => {
+  const dispatch = useDispatch()
   return (
     <li>
-      {/* Add an onClick that will let you add a feature to your car */}
-      <button onClick={e => props.addItem(props.feature)} className='button'>Add</button>
-      {props.feature.name} (+{props.feature.price})
+      <button
+        onClick={() => dispatch(addItem(props.feature))}
+        className='button'
+      >
+        Add
+      </button>
+      {props.feature.name + props.feature.price}
     </li>
   )
 }
 
-export default connect(null, { addItem })(AdditionalFeature)
+export default AdditionalFeature

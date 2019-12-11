@@ -11,6 +11,7 @@ body {
   place-items: center;
 }
 .boxes {
+  //for some reason doesn't work with grid properly? don't understand why.
   // display: grid;
   // grid-gap: 2em;
   // grid-template-columns: repeat(2, minmax(350px, 1fr));

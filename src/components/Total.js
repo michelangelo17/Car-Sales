@@ -1,19 +1,16 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { useSelector, shallowEqual } from 'react-redux'
 
-const Total = props => {
+const Total = () => {
+  const { additionalPrice, car } = useSelector(
+    state => ({ additionalPrice: state.additionalPrice, car: state.car }),
+    shallowEqual
+  )
   return (
     <div className='content'>
-      <h4>Total Amount: ${props.car.price + props.additionalPrice}</h4>
+      <h4>Total Amount: ${car.price + additionalPrice}</h4>
     </div>
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    additionalPrice: state.additionalPrice,
-    car: state.car
-  }
-}
-
-export default connect(mapStateToProps, {})(Total)
+export default Total
