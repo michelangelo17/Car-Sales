@@ -5,12 +5,12 @@ import AdditionalFeatures from './components/AdditionalFeatures'
 import Total from './components/Total'
 
 const App = () => (
-  <div className='boxes'>
-    <div className='box'>
+  <div className='columns'>
+    <div className='column box'>
       <Header />
       <AddedFeatures />
     </div>
-    <div className='box'>
+    <div className='column box'>
       <AdditionalFeatures />
       <Total />
     </div>
